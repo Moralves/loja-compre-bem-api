@@ -34,7 +34,7 @@ public class Produto {
     private String imagem;
 
     @Column(nullable = false)
-    private Integer quantidade;
+    private Integer quantidade = 0;
 
     public static Produto toEntity(ProdutoRequestDTO produtoRequestDTO) {
         Produto produto = new Produto();
@@ -43,6 +43,7 @@ public class Produto {
         produto.setPreco(produtoRequestDTO.preco());
         produto.setCategoria(produtoRequestDTO.categoria());
         produto.setImagem(produtoRequestDTO.imagem());
+        produto.setQuantidade(0);
         return produto;
     }
 }
